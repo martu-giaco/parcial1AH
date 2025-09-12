@@ -1,0 +1,39 @@
+header nav.bg-body-tertiary, footer{
+    background-color: rgb(20, 20, 20) !important;
+    color: white !important;
+}
+
+#navbarNavAltMarkup{
+    justify-content: flex-end;
+}
+
+.navbar{
+    --bs-navbar-padding-y: 1rem !important;
+}
+.navbar-nav{
+        --bs-nav-link-color: rgb(255 255 255 / 93%) !important;
+}
+
+p#desc{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    color: #575757;
+}
+
+main div div:first-child{
+    width: 40%;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+footer ul li{
+    list-style: none;
+}
+
+footer ul:nth-child(2){
+    text-align: right;
+    padding-right: 2rem;
+}
