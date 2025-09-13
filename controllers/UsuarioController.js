@@ -44,7 +44,15 @@ const updateUserById = async( request, response) =>{
     }
 }
 
-export { 
-    newUser, listUsers, 
-    getUserById, deleteUserById, updateUserById 
-};
+const getUserByNombre = async (request, response) => {
+    const nombre = request.params.nombre.trim().toLowerCase();
+    const usuarios = await User.find();
+    const usuariosXnombre = usuarios.filter(u => u.nombre.toLowerCase() === nombre);
+    if( usuariosXnombre.length > 0){
+        response.status(200).json({data: usuariosXnombre});
+    } else {
+        response.status(404).json({msg: 'Usuario no encontrada'});
+    }
+}
+
+export { newUser, listUsers, getUserById, deleteUserById, updateUserById , getUserByNombre };

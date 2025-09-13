@@ -45,25 +45,14 @@ const updateCapsulaById = async( request, response) =>{
 }
 
 const getCapsulaByNombre = async (request, response) => {
-    const nombre = request.params.nombre;
-    const capsula = await Capsula.find({});
-    if( capsula){
-        response.status(200).json({data: capsula});
+    const nombre = request.params.nombre.trim().toLowerCase();
+    const capsulas = await Capsula.find();
+    const capsulasXnombre = capsulas.filter(c => c.nombre.toLowerCase() === nombre);
+    if( capsulasXnombre.length > 0){
+        response.status(200).json({data: capsulasXnombre});
     } else {
         response.status(404).json({msg: 'capsula no encontrada'});
     }
 }
 
-export { 
-    newCapsula, listCapsulas, 
-    getCapsulaById, deleteCapsulaById, updateCapsulaById 
-};
-
-const pets = await Pet.find({});
-
-        // Se filtra todas las mascotas con el mismo nombre
-        const petsFiltered = pets.filter( p => p.name.toLowerCase() === name.toLowerCase() );
-
-        if (petsFiltered.length === 0) {
-            return res.status(404).json({ msg: "No se encontraron mascotas con ese nombre." });
-        }
+export { newCapsula, listCapsulas, getCapsulaById, deleteCapsulaById, updateCapsulaById, getCapsulaByNombre };

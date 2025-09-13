@@ -44,7 +44,15 @@ const updateMaquinaById = async( request, response) =>{
     }
 }
 
-export { 
-    newMaquina, listMaquinas, 
-    getMaquinaById, deleteMaquinaById, updateMaquinaById 
-};
+const getMaquinaByNombre = async (request, response) => {
+    const nombre = request.params.nombre.trim().toLowerCase();
+    const maquinas = await Maquina.find();
+    const maquinasXnombre = maquinas.filter(m => m.nombre.toLowerCase() === nombre);
+    if( maquinasXnombre.length > 0){
+        response.status(200).json({data: maquinasXnombre});
+    } else {
+        response.status(404).json({msg: 'Maquina no encontrada'});
+    }
+}
+
+export { newMaquina, listMaquinas, getMaquinaById, deleteMaquinaById, updateMaquinaById, getMaquinaByNombre };
