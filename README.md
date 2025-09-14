@@ -9,4 +9,4 @@
   <li><b>Comisión:</b> dwm4ap</li>
 </ul>
 
-<img src="img/preview.png" alt="preview Nespresso API">
+<img src="https://files.catbox.moe/jtc7ns.png" alt="preview Nespresso API">
