@@ -25,9 +25,40 @@ main div div:first-child{
     width: 40%;
 }
 
+main section h2{
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+main section h2#maquinas, h2#usuarios{
+    margin-top: 2rem;
+}
+
+main section div h3.card-header{
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    background-color: #257a57;
+}
+
+main section div.card{
+    margin-bottom: 2rem;
+    border-color: #257a57;
+}
+div.card-body{
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    background-color: #161616;
+    color: white;
+}
+
 footer{
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
+}
+
+footer ul{
+    margin: 1rem;
 }
 footer ul li{
     list-style: none;
