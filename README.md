@@ -8,3 +8,5 @@
   <li><b>Profesor:</b> Cruz Jonathan Emanuel</li>
   <li><b>Comisión:</b> dwm4ap</li>
 </ul>
+
+<img src="img/preview.png" alt="preview Nespresso API">
